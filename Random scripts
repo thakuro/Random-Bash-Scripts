@@ -1,0 +1,23 @@
+##
+df -h | egrep 'vg0[1-5]' |awk '{print $6}' | sort -r | xargs -l umount 
+
+###
+for dev in $(ls -1 /etc/fcoe/|grep -v cfg-ethx|sed -e 's/cfg-//');do printf "DEVICE=%s\nBOOTPROTO=none\nONBOOT=yes\nUSERCTL=no\nHWADDR=\n" $dev > /etc/sysconfig/network-scripts/ifcfg-$dev;ifup $dev;done
+
+##
+for i in $(ls -1 /dev/mapper/shared-512G-00[0-3] /dev/mapper/shared-113G-00[0-3]);do echo $i;done
+
+##
+for i in $(ls -1 /dev/mapper/shared-512G-00[0-3] /dev/mapper/shared-113G-00[0-3]);do dd if=/dev/zero bs=1024 count=1000 of=$i;done
+
+##
+for i in $(ls -1 /dev/mapper/shared-512G-00[0-3] /dev/mapper/shared-113G-00[0-3]);do dd if=/dev/zero bs=1024 count=10000 of=$i;done
+
+##
+for i in $(ls -1 /dev/mapper/shared-512G-00[0-3] /dev/mapper/shared-113G-00[0-3]);do pvcreate $i;done 
+
+## pv create one liner
+ls -1 /dev/mapper/dedicated-*|xargs -l pvcreate   
+
+## Volume groups on liner
+grep '\<VolumeGroup ' mbs |egrep -v 'vg02|dg'| awk '{print $2,$5}'|cut -d\" -f2,4|sed -e 's/"/ /'| awk 'BEGIN{x[143]=0;x[64]=0;x[16]=0;x[28]=0;x[94]=0;}{printf("vgcreate %s /dev/mapper/dedicated-%dG-%0.3d\n",$2,  $1,x[$1]);x[$1]++}'
