@@ -1,0 +1,665 @@
+#class Random:
+ #   def __init__(self,x,y,z):
+  #      self.x = x
+   #     self.y = y
+    #    self.z = z
+
+    #def assign(self):
+     #   a = self.x + self.y
+      #  return a
+
+#from operator import itemgetter
+
+
+#r = Random (1,2,3)
+#print (r.assign())
+
+#i = 200
+#i = float(233)
+
+#print(type(i))
+#print (i)
+#list = []
+#list_1 = list
+
+#list.append('naveen')
+#list.append('omkar')
+
+#print (list_1)
+#print (list[0])
+
+#type(i)
+#print(type(list))
+
+#cars = {'A':{'speed':70,
+        #'color':2},
+        #'B':{'speed':60,
+        #'color':3}}
+
+#def double():
+    #list_2 = [list]*[list_1]
+    #print(list_2)
+    #dict(zip((list_1), (list)))
+    #for k,v  in cars.items():
+        #print k
+
+
+#newlist = sorted(list_1, key=lambda k: k['1'])
+#double()
+#newlist = sorted(list_1, key=itemgetter('name'))
+#print(newlist)
+
+### Program for unpacking arbitrary data
+#records = [     ('foo', 1, 2),     ('bar', 'hello'),     ('foo', 3, 4), ]
+
+
+#def foo(x,y):
+    #print('foo',x,y)
+
+#def bar(z):
+    #print('bar')
+
+#def func():
+    #for tag, *args in records:
+        #if tag == 'foo':
+            #foo(*args)
+        #elif tag == 'bar':
+            #bar(*args)
+
+#func()
+
+#def sample():
+    #for tab, *args in records:
+        #print(records)
+
+#sample()
+
+####### End of the program for unpacking arbitrary data
+
+
+#a = ['foo', 'bar', 'baz', 'qux', 'corge']
+#s = 'corge'
+#j = 0; i = 0
+#while i < len(a):
+ #print(a[i])
+ #if s == a[i]:
+  #print ("found")
+  #break
+ #i += 1
+#else:
+ #print ("not found")
+
+#################################################################################
+#def gen():
+ #i=0
+ #print (i)
+ #while True:
+  #yield i*i
+  #i+=1
+
+#for num in gen():
+ #if num < 100:
+  #print("It is less than 100")
+  #print(num)
+###################################################################################
+
+#list = ['abc','def','ghi','abc']
+#seen = set()
+#def this(list):
+
+#    for item in list:
+#        if item not in seen:
+#            seen.add(item)
+
+
+#this(list)
+#print (seen)
+
+##############################################################################################
+# = [1,2,3,4,5,6,7,8,9]
+#a = []
+#def loop(grades):
+#    for y in grades:
+#        print (y)
+#def average(x):
+#    a = grades[0] + grades[:]
+#    print (a)
+
+
+#average(grades)
+#string =''
+#for i in range(0,20):
+#    if i < 11:
+#       string = string + '*'
+#    elif i == 14 or i == 15:
+
+#        string = string + '*'
+#    else:
+#        string = string + ' '
+
+#print (string)
+
+#string = ''
+#for j in range (0,5):
+#     string = ''
+#     for i in range (0,40):
+#         if i == 5:
+#             string = string + '*'
+#         elif i ==14 or i==15 or i==20 or i==21 or j == 3:
+#             string = string + '*'
+
+#         else:
+#             string = string + ' '
+#     print (string)
+
+#string =''
+#for i in range(0,10):
+#    string = string + '*'
+#print (string)
+###########################################################################################
+#def simple():
+#    assert x == y
+x = "H e l l o"
+y = []
+i = 0
+data =  x.split()
+
+#for i in data:
+#    y.append(i)
+#    print (y)
+#    if y == ['H', 'e', 'l', 'l', 'o']:
+#        print ("broke")
+#        continue
+#        print ("continued")
+#print (x,y)
+'''
+for i in range (1,100):
+    if i == 20:
+        print (i,"Reached 20")
+        continue
+    print (i)
+
+
+str = ["f,o,o,b,a,r",
+       "M,e,e,b,a,r",
+       "s,e,e,b,a,r"]
+
+print(str)
+
+print(str[0])
+print(str[0:2:5])
+
+
+str="foobar"
+print(str[::-5] , str[::-1])
+
+
+str = 'foobar'
+
+print(str[::-1][-1]+str[len(str)-1])
+
+str = "OmkarOThakur"
+list = []
+
+def compression():
+    counter = 0
+    for i in str:
+
+        if i == list[*]:
+            counter = counter + 1
+            print ("if worked")
+            list.append([i])
+        else:
+            list.append([i])
+            print(list)
+
+compression()
+'''
+
+
+#print('$100 $200 $300'.count('$'), '$100 $200 $300'.count('$',5),'$100 $200 $300'.count('$',0,11) )
+'''
+import unittest
+
+string = 'OmkarOOmkar'
+def string_compression(string):
+    compressed = []
+    counter = 0
+
+    for i in range(len(string)):
+
+        if i != 0 and string[i] != string[i - 1]:
+            print(string[i])
+            compressed.append(string[i - 1] + str(counter))
+            print("if condition loop", string[i - 1] + str(counter))
+            counter = 0
+
+        counter += 1
+
+    # add last repeated character
+    compressed.append(string[-1] + str(counter))
+    print("Last character", string[-1] + str(counter))
+    # returns original string if compressed string isn't smaller
+    return min(string, ''.join(compressed), key=len)
+    print (min(string, ''.join(compressed), key=len))
+
+string_compression(string)
+'''
+'''
+class Test(unittest.TestCase):
+    Test Cases
+    data = [
+        ('aabcccccaaa', 'a2b1c5a3'),
+        ('abcdef', 'abcdef')
+    ]
+
+    def test_string_compression(self):
+        for [test_string, expected] in self.data:
+            actual = string_compression(test_string)
+            self.assertEqual(actual, expected)
+            
+
+if __name__ == "__main__":
+    unittest.main()
+'''
+
+#import unittest
+#string = 'OOmkarOOmkarOmkarasdjh'
+#compressed = []
+#counter = 1
+#def string_compression(string):
+#    counter = 1
+#    for i in range(len(string)):
+#        if (string[i] != string[i - 1]) and i != 0:
+#            compressed.append(string[i] + str(counter))
+#            print(string[i] + str(counter))
+#        else:
+#            counter += 1
+#            compressed.append(string[i] + str(counter))
+            #compressed.append(string[i] + str(counter))
+        #print ("Current string", string[i], "Next string", string[i + 1], "Next to next string", string[ i + 2], "Previous string", string [i - 1])
+            #print (string[i] + str(counter))
+#class Test(unittest.TestCase):
+#    '''Test Cases'''
+#    data = [
+#        ('aabcccccaaa', 'a2b1c5a3'),
+#        ('abcdef', 'abcdef')
+#    ]
+#    def test_string_compression(self):
+#        for [test_string, expected] in self.data:
+#            actual = string_compression(test_string)
+#            self.assertEqual(actual, expected)
+
+#if __name__ == "__main__":
+#    unittest.main()
+
+#from heapq import heapify, heappush, heappop
+
+#list = [1,4,6,8,9,23,56,78,2,4,6,8,9]            # creates an empty heap
+#heappush(heap, item) # pushes a new item on the heap
+#item = heappop(heap) # pops the smallest item from the heap
+#item = heap[0]       # smallest item on the heap without popping it
+#heapify(list)
+#print (list)
+#heappop(list)
+#print (list)
+#heappush(list,28)
+#print (list)
+#heappop(list)
+#A = "25525511135"
+
+#def is_valid(ip):
+    # Splitting by "."
+#    ip = ip.split(".")
+
+    # Checking for the corner cases
+#    for i in ip:
+#        if len(i) > 3 or int(i) < 0 or int(i) > 255:
+#            return False
+#        if len(i) > 1 and int(i) == 0:
+#            return False
+#        if len(i) > 1 and int(i) != 0 and i[0] == '0':
+#            return False
+#    return True
+
+
+# Function converts string to IP address
+#def convert(s):
+#    sz = len(s)
+
+    # Check for string size
+#    if sz > 12:
+#        return []
+#    snew = s
+#    l = []
+
+# Generating different combinations.
+    #for i in range(1, sz - 2):
+     #   for j in range(i + 1, sz - 1):
+     #       for k in range(j + 1, sz):
+     #           snew = snew[:k] + "." + snew[k:]
+     #           snew = snew[:j] + "." + snew[j:]
+     #           snew = snew[:i] + "." + snew[i:]
+
+            # Check for the validity of combination
+     #           if is_valid(snew):
+     #               l.append(snew)
+     #           snew = s
+    #return l
+                #print (l)
+#    for i in range(1,sz - 2):
+#        for j in range(i + 1, sz - 1):
+#            for k in range(j + 1, sz):
+#                snew = snew[:k] + "." + snew[k:]
+#                snew = snew[:j] + "." + snew[j:]
+#                snew = snew[:i] + "." + snew[i:]
+
+#                if is_valid(snew):
+#                    l.append(snew)
+#                snew = s
+#    return l
+#print(convert(A))
+##############################################################################
+'''
+nums = [-1, 2, 1, -4]
+target = 1.
+
+class Solution(object):
+    def threeSumClosest(self, nums, target):
+        ls = len(nums)
+        print ("This is ls", ls)
+        sort_nums = sorted(nums)
+        print (nums[0], nums[1], nums[2])
+        print("This is sort nums", sort_nums)
+        res = nums[0] + nums[1] + nums[2]
+        print("This is res", res)
+        for i in range(ls - 2):
+
+            j, k = i + 1, ls - 1
+            print (j,k)
+            while j < k:
+                temp = sort_nums[i] + sort_nums[j] + sort_nums[k]
+                if abs(target - temp) < abs(target - res):
+                    res = temp
+                if temp < target:
+                    j += 1
+                else:
+                    k -= 1
+        return res
+
+
+
+x = Solution()
+print(x.threeSumClosest([-1, 2, 1, -4], 1))
+'''
+'''
+class Solution(object):
+    def palindrome(self,x):
+        s = str(x)
+        rs = ''.join(reversed(x))
+        if s == rs:
+            print ("is a palindrome")
+        else:
+            print ("It is not a palindrome")
+
+x = Solution()
+print(x.palindrome('nitin'))
+'''
+'''
+##### working solution for the problem 35. search insert position
+from typing import List
+class Solution:
+
+    def search(self, nums: List[int], target: int) -> int:
+        Dict = {}
+        for var,ele in enumerate(nums):
+            Dict.update({var:ele})
+            if ele == target:
+                print(ele)
+            elif ele > target:
+                sample = var -1
+                print(Dict.get(sample))
+                
+#######
+
+s = Solution()
+print(s.search([2,3,5], 4))
+
+'''
+'''
+###35. search insert position
+from typing import List
+class Solution:
+    def search(self, nums : List[int], target: int) -> int:
+        for i in nums:
+            if i == target:
+                print("First loop", i)
+            elif i > target:
+                index = nums.index(i)
+                new_index = index -1
+                print (nums[new_index])
+
+s = Solution()
+s.search([2, 3, 5], 4)
+'''
+'''
+## 27 Remove element from a list
+from typing import List
+class Solution(object):
+    def removeElement(self, nums: List[int], val: int) -> int:
+        while True:
+            print (len(nums))
+            rem = len(nums)
+            nums.remove(rem)
+            print (nums)
+            val -= 1
+            if val == 0:
+                break
+
+x = Solution()
+x.removeElement([1,2,3,4,5], 2)
+'''
+###58
+'''
+class something(object):
+    def word(self, *argv: str):
+
+        command = argv
+        
+        print (len(command))
+        if len(command) > 1:
+            temp1 = [t for t in command if len(t) > 1]
+            print (len(command))
+            print (temp1[-1])
+
+        if len(command) <= 1:
+            print("It is not a word")
+
+
+x = something()
+#x.word('Omkar','Thakur',' ', ' lol')
+x.word('')
+'''
+
+'''
+##26. Remove Duplicates from Sorted Array
+from typing import List
+class length(object):
+    def calculate(self, num: List[int]) -> int:
+        thelen = 1
+
+        if len(num) == 0:
+            print("first loop")
+            return 0
+        i = 0
+        for i in range(0, len(num) - 1):
+            #print(len(num))
+            if num[i] != num[i+1]:
+                thelen += 1
+            i = i + 1
+        print(thelen)
+
+
+x = length()
+x.calculate([1,1,2,3,3,4,4,5],)
+'''
+'''
+class solution(object):
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+    #def twoSum(self, nums: List[int], target: int) -> List[int]:
+    #nums: List[int]
+    #target: int
+    #List[int]
+
+        h = {}
+        for i, num in enumerate(nums):
+            n = target - num
+            if n not in h:
+                h[num] = i
+            else:
+                return [h[n], i]
+
+x = Solution()
+x.twoSum([1,2,3,4], 1)
+'''
+'''
+###function to create a dictionary based on occurance of the values
+def function(nums):
+    j = {}
+    for i in nums:
+        if i not in j.keys():
+            count = 1
+            j[i] = count
+        elif i in j.keys():
+            k  = j.get(i)
+            new_count = k + 1
+            j[i] = new_count
+    return j
+
+####function to remove the values occuring more than once
+def function2():
+    var = function([1,2,1,3,4,5,6,1,6,5]) ## this is a function call
+    var1 = var.items()
+    print ("This is sample var", var1)
+    list = []
+    list1 = []
+
+    for key,value in var.items():
+        if value > 1:
+            list.append(key)
+
+    for i in list:
+        del var[i] ## this will delete the dictionary entries.
+    print("This is the final var", var)
+
+    for key in var.keys(): ### print only the keys and not values
+        list1.append(key)
+    print(list1)
+
+    for key,value in var.items():
+        if var1[1] == 1:
+            print (key,"This is with key/value iteration")
+
+function2()
+'''
+'''
+import queue
+
+L = queue.LifoQueue(maxsize=6)
+
+print (L.qsize())
+
+L.put(5)
+L.put(9)
+L.put(1)
+L.put(7)
+L.put(9)
+L.put(10)
+print("Full: ", L.full())
+print("Size: ", L.qsize())
+
+
+print(L.get())
+print(L.get())
+'''
+###if linked list has a cycle
+'''
+class ListNode(object):
+     def __init__(self, x):
+         self.val = x
+         self.next = None
+
+class Solution(object):
+    def hasCycle(self, head):
+        """
+        :type head: ListNode
+        :rtype: bool
+        """
+        if not head or not head.next:
+            return False
+        reverse_head = self.reverseList(head)
+        if reverse_head is head:
+            return True
+        else:
+            return False
+
+    def reverseList(self, head):
+        new_head = None
+        while head:
+            tmp = head.next
+            head.next = new_head
+            new_head = head
+            head = tmp
+
+        return new_head
+
+first = ListNode(4)
+print(first.val)
+
+x = Solution()
+print(x.hasCycle(10))
+'''
+
+#linked list implementation
+# A single node of a singly linked list
+class Node:
+  # constructor
+  def __init__(self, data = None, next=None): 
+    self.data = data
+    self.next = next
+
+# A Linked List class with a single head node
+class LinkedList:
+  def __init__(self):  
+    self.head = None
+  
+  # insertion method for the linked list
+  def insert(self, data):
+    newNode = Node(data)
+    if(self.head):
+      current = self.head
+      print("This is head", current.data, "Current.next is", current.next)
+      while(current.next):
+        print("Before initializing current", current.next)
+        current = current.next
+        print("after initializing current", current.data)
+      current.next = newNode
+      print("In next current", current.next)
+    else:
+      self.head = newNode
+      print("In new node current")
+  
+  # print method for the linked list
+  def printLL(self):
+    current = self.head
+    while(current):
+      print(current.data)
+      current = current.next
+
+# Singly Linked List with insertion and print methods
+LL = LinkedList()
+LL.insert(3)
+LL.insert(4)
+LL.insert(5)
+LL.insert(6)
+print(LL.printLL())
